@@ -51,7 +51,7 @@ const list=document.getElementById('list');let g=null,ul;
 for(const [n,band,u,dt,tx,pk] of D){
  if(band!==g){g=band;const h=document.createElement('h2');h.textContent=band;list.append(h);ul=document.createElement('ul');list.append(ul)}
  const li=document.createElement('li');if(done[pk])li.classList.add('ok');
- li.innerHTML=`<span class="no">${n}</span><div class="info"><div class="who"></div><div class="txt"></div></div><div class="act"><a class="go" target="_blank" rel="noopener" href="https://www.instagram.com/reel/DecxPZQTdBx/c/${pk}/">댓글 열기</a><input type="checkbox" id="c${pk}" aria-label="저장 완료"></div>`;
+ li.innerHTML=`<span class="no">${n}</span><div class="info"><div class="who"></div><div class="txt"></div></div><div class="act"><a class="go" href="https://www.instagram.com/p/DecxPZQTdBx/c/${pk}/">댓글 열기</a><input type="checkbox" id="c${pk}" aria-label="저장 완료"></div>`;
  li.querySelector('.who').textContent='@'+u;
  li.querySelector('.txt').textContent=dt.replace('2026. ','')+(tx&&tx!=='(사진만)'?' · '+tx:'');
  const cb=li.querySelector('input');cb.checked=!!done[pk];
